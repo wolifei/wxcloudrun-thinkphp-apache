@@ -13,193 +13,227 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
   <title>欢迎使用微信云托管</title>
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Droid Sans", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
-    }
+/*@media screen and (max-width: 320px) {
+    　　html,body { font-size: 62.5%;}
+}@media screen and (min-width: 321px) and (max-width:350px) {
+    　　@media screen and (-webkit-min-device-pixel-ratio: 2) {
+        　　　　html,body { font-size: 71.62%;}
+    　　}    　　@media screen and (-webkit-min-device-pixel-ratio: 3) {
+        　　　　html,body { font-size: 68.75%;}
+    　　}
+}@media screen and (min-width: 351px) and (max-width:380px) {
+    　　html,body { font-size: 75%;}
+}@media screen and (min-width: 381px) and (max-width:410px) {
+    　　@media screen and (-webkit-min-device-pixel-ratio: 2) {　　
+        　　　　html,body { font-size: 84.64%;}
+    　　}    　　@media screen and (-webkit-min-device-pixel-ratio: 3) {
+        　　　　html,body { font-size: 81.25%;}
+    　　}
+}@media screen and (min-width: 411px) and (max-width:440px) {
+    　　@media screen and (-webkit-min-device-pixel-ratio: 2) {
+        　　　　html,body { font-size: 91.15%;}
+    　　}    　　@media screen and (-webkit-min-device-pixel-ratio: 3) {
+        　　　　html,body { font-size: 87.5%;}
+    　　}
+}@media screen and (min-width: 441px) and (max-width:470px) {
+    　　@media screen and (-webkit-min-device-pixel-ratio: 2) {
+        　　　　html,body { font-size: 97.66%;}
+    　　}    　　@media screen and (-webkit-min-device-pixel-ratio: 3) {
+        　　　　html,body { font-size: 93.75%;}
+    　　}
+}@media screen and (min-width: 471px) and (max-width:500px) {
+    　　@media screen and (-webkit-min-device-pixel-ratio: 2) {
+        　　　　html,body { font-size: 104.17%;}
+    　　}    　　@media screen and (-webkit-min-device-pixel-ratio: 3) {
+        　　　　html,body { font-size: 100%;}
+    　　}
+}@media screen and (min-width: 501px) and (max-width:539px) {
+    　　@media screen and (-webkit-min-device-pixel-ratio: 2) {
+        　　　　html,body { font-size: 110.68%;}
+    　　}    　　@media screen and (-webkit-min-device-pixel-ratio: 3) {
+        　　　　html,body { font-size: 106.25%;}
+    　　}
+}@media screen and (min-width: 540px) {
+    　　html,body { font-size: 150%;}
+}*/
 
-    .title-logo {
-      width: 80px;
-      height: 80px;
-    }
+/* 仲裁费测算 */
 
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
 
-    @media screen and (min-width:1200px) {
-      body .container {
-        margin-top: 160px;
-        margin-bottom: 272px;
-      }
-    }
+@charset "utf-8";
+*{
+  padding: 0;
+  margin:0;
+}
+body{
+  font-size: 75%;
+  font-family: "微软雅黑";
 
-    @media screen and (max-width:1919px) {
-      body .container {
-        margin-top: 76px;
-        margin-bottom: 128px;
-      }
-    }
+}
+ul{
+  list-style:none;
+}
+a{
+  text-decoration: none;
+}
+input,textarea{
+  outline:none;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.clearfix:after{
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+}
+.mt10{
+  margin-top: 1.25rem;
+}
+.mt30{
+  margin-top: 1.5rem;
+}
+.c333{
+  color: #333;
+}
+.c666{
+  color: #666;
+}
+.c636363{
+  color: #636363;
+}
+.c999{
+  color: #999999;
+}
+.cfff{
+  color: #fff;
+}
+.fs12{
+  font-size: .6rem;
+}
+.fs16{
+  font-size: .8rem;
+}
+.fs18{
+  font-size: .9rem;
+}
+.body{
+  background: #fff;
+  height:100%;
+}
+/*仲裁计算器*/
+.mainbottom-calc{
 
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .count-button {
-      width: 320px;
-      height: 40px;
-      box-sizing: border-box;
-      margin: 16px 8px;
-      font-weight: 500;
-      font-size: 17px;
-      color: #FFFFFF;
-      letter-spacing: 1px;
-      text-align: center;
-      border-radius: 4px;
-    }
-
-    .count-number {
-      align-self: flex-start;
-      opacity: 0.9;
-      font-weight: 500;
-      font-size: 14px;
-      color: #000000;
-    }
-
-    .count-reset {
-      color: #576b95;
-      cursor: pointer;
-      margin-left: auto;
-    }
-
-    .count-text {
-      width: 320px;
-      height: 40px;
-      padding: 0 12px;
-      margin: 0 auto;
-      line-height: 40px;
-      text-align: left;
-      display: flex;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      border-radius: 4px;
-      opacity: 0.9;
-      box-sizing: border-box;
-      font-weight: 400;
-      font-size: 14px;
-      color: #000000;
-    }
-
-    .quote {
-      font-size: 12px;
-    }
-
-    .qrcode {
-      height: 144px;
-      width: 144px;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .title {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      width: 320px;
-    }
-
-    .title-text {
-      width: 320px;
-      height: 48px;
-      text-align: center;
-      margin-top: 16px;
-      font-size: 32px;
-      opacity: 0.9;
-      font-weight: 500;
-      font-size: 32px;
-      color: #000000;
-      letter-spacing: 0;
-      line-height: 48px;
-    }
-
-    .counter-container {
-      margin-top: 48px;
-    }
-
-    .hr {
-      text-align: center;
-      position: relative;
-      z-index: 2;
-      height: 20px;
-      line-height: 20px;
-    }
-
-    .hr::after {
-      position: absolute;
-      content: '';
-      top: 10px;
-      left: 60px;
-      width: 200px;
-      border-bottom: 1px solid rgba(0, 0, 0, .1);
-      z-index: -1;
-    }
-
-    .hr small {
-      display: inline-block;
-      background-color: white;
-    }
-
-    .hr-text {
-      display: inline-block;
-      height: 20px;
-      font-weight: 400;
-      font-size: 14px;
-      color: rgba(0, 0, 0, 0.55);
-      letter-spacing: 0;
-      text-align: center;
-      z-index: 2;
-      background-color: white;
-      padding: 0 8px;
-      line-height: 20px;
-    }
-
-    .link-button {
-      width: 154px;
-      height: 48px;
-      box-sizing: border-box;
-      font-weight: 400;
-      font-size: 14px;
-      color: rgba(0, 0, 0, 0.90);
-      letter-spacing: 0;
-      text-align: center;
-      background: rgba(0, 0, 0, 0.03);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .card {
-      margin-top: 16px;
-      width: 320px;
-      height: 200px;
-      box-sizing: border-box;
-      border: 1px solid rgba(0, 0, 0, 0.10);
-      border-radius: 5.71px;
-      position: relative;
-    }
-
-    .card-text {
-      text-align: center;
-      font-weight: 400;
-      font-size: 14px;
-      color: rgba(0, 0, 0, 0.55);
-      letter-spacing: 0;
-    }
-  </style>
+  width: 100%;
+  height: 22.0rem;
+  background: #f4f4f4;
+  position: absolute;
+  /*margin-bottom: 5rem;*/
+  margin-top: 30%;
+  
+}
+.mainbottom-iptbox{
+  width: 90%;
+}
+.mainbottom-iptbox div{
+  margin-bottom: .8rem;
+}
+.mainbottom-iptbox .srk{
+  width: 9rem;
+  height: 1.4rem;
+  padding: 0 .5rem;
+  border: .05rem solid #ccc;
+}
+.mainbottom-iptbox span{
+  line-height: 1.5rem;
+  margin-right: .3rem;
+  color: #999;
+}
+.mainbottom-iptbox label{
+  width: 5rem;
+  line-height: 1.5rem;
+  color: #999;
+  text-align: right;
+}
+.mainbottom-iptbox .mainbottom-iptbox-txtstyle1{
+  margin-left: .35rem;
+}
+.mainbottom-iptbox .mainbottom-iptbox-txtstyle2{
+  width: 5.35rem;
+  /*letter-spacing:.35rem;*/
+}
+.mainbottom-explain{
+  width: 85%;
+  line-height: 1rem;
+  margin-left: 1rem;
+  letter-spacing:.01rem;
+  color: #245399;
+  padding: auto;
+}
+.mainbottom-calc-title{
+  width: 10%;
+  height: 22rem;
+  font-size: 1.24rem;
+  background: #245399;
+}
+.mainbottom-calc-title p{
+  width: 1.5rem;
+  margin: 7rem auto;
+  text-align: center;
+}
+.calc-readonly{
+  background: #ccc;
+}
+.mainbottom-tab{
+  width: 17.1rem;
+  height: 13.3rem;
+  margin-right: 2.85rem;
+}
+.mainbottom .mainbottom-tab:last-child{
+  margin-right: 0;
+}
+.mainbottom-tab-title{
+  height: 2.5rem;
+  background: #f4f4f4;
+}
+.mainbottom-tab-content{
+  position: relative;
+  height: 10.8rem;
+  text-align: center;
+  background: #fff;
+  border: .05rem solid #f4f4f4;
+  border-top: 0;
+}
+.mainbottom-tab-content .mainbottom-icon{
+  margin-top:2rem;
+  transition: all 0.5s ease;
+}
+.mainbottom-tab-content .mainbottom-txt{
+  position: absolute;
+  width: 100%;
+  line-height: 2.9rem;
+  bottom: 0;
+  left: 0;
+  font-size: 1.2rem;
+  background: #4e82f0;
+  transition: all 0.5s ease;
+}
+.mainbottom-tab:hover .mainbottom-icon{
+  margin: 1.5rem;
+}
+.mainbottom-tab:hover .mainbottom-txt{
+  line-height:3.9rem;
+}
+.btn{width:1.4rem;height:1.4rem;border:0;color:#fff;text-shadow:.025rem .025rem .025rem #0063b1;font-size:.2rem;margin-top:.8rem;}
+.s1{margin-top:.8rem;}
+.mainbottom-height{
+	height:100%
+}
+    </style>
 </head>
 
 <body>
